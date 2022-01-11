@@ -1,2 +1,3 @@
 [] CRUD Menu
     [✓] index
+    [✓] show

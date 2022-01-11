@@ -2,8 +2,12 @@
 <ul>
   <% @menus.each do |menu| %>
     <li>
-      <%= menu.title%>
+      <a href="<%= menu_path(menu) %>"><%= menu.title%></a>
+    </li>
+    <li>
       <%= menu.description%>
+    </li>
+    <li>
       <%= menu.price%>
     </li>
   <% end %>
