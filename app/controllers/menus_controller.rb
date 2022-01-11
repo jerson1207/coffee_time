@@ -34,7 +34,14 @@ class MenusController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-    
+
+  def destroy
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+
+    redirect_to menus_path, status: :see_other
+  end
+
   private 
     def menu_params
       params.require(:menu).permit(:title, :description, :price)
