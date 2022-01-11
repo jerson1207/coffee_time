@@ -2,7 +2,7 @@
 <ul>
   <% @menus.each do |menu| %>
     <li>
-      <a href="<%= menu_path(menu) %>"><%= menu.title%></a>
+      <%= link_to menu.title, menu %>
     </li>
     <li>
       <%= menu.description%>
@@ -12,3 +12,5 @@
     </li>
   <% end %>
 </ul>
+
+<%= link_to "New menu", new_menu_path %>
