@@ -1,0 +1,12 @@
+<h1>StaticPage#home</h1>
+<p>Find me in app/views/static_page/home.html.erb</p>
+
+
+
+<% @menu.each do |menu| %>
+  <div class="menu">
+    <h1><%= link_to menu.title, menu %></h1>
+    <h3><%= menu.description %></h3>
+    <h2><%= menu.price %><span> PHP</span> </h2>
+  </div>
+<% end %>
