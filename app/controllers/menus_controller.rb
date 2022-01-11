@@ -20,7 +20,21 @@ class MenusController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
+  def edit
+    @menu = Menu.find(params[:id])
+  end
+
+  def update
+    @menu = Menu.find(params[:id])
+
+    if @menu.update(menu_params)
+      redirect_to @menu
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+    
   private 
     def menu_params
       params.require(:menu).permit(:title, :description, :price)
