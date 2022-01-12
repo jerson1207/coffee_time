@@ -1,10 +1,10 @@
 <div class="header">
-  <h1 class="logo">Coffee Time</h1>
+  <h1 class="logo"><%= link_to "Coffee Time", root_path%> </h1>
   <nav class="navbar">
     <%= link_to 'Home', "#home" %>
-    <%= link_to 'About', "#menu" %>
+    <%= link_to 'Menu', "#menu" %>
   </nav>
   <div class="navigation-menu">
-    menu
+    <%= link_to "Menu Section", menus_path %>
   </div>
 </div>
