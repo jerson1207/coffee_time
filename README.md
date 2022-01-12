@@ -2,5 +2,5 @@
 [✓] Static Page
     [✓] Home
     [✓] Menu
--applies CSS
+-applied CSS
 
