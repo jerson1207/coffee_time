@@ -4,18 +4,20 @@
     <%= link_to 'Home', "#home" %>
     <%= link_to 'Menu', "#menu" %>
   </nav>
-  <div class="navigation-menu">
-    <%= link_to "Menu Section", menus_path %>
+  <div class="user-navbar">
     <% if logged_in? %>
-      <li><%= link_to "Users", '#' %></li>
-        Account 
+      <span><%= current_user.name %></span>
+      <div class="navbar-content">
         <ul>
+          <li><%= link_to "Menu Section", menus_path %></li>
+          <li><%= link_to "Users", '#' %></li>
           <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to "Settings", '#' %></li>
           <li><%= link_to "Log out", logout_path, method: :delete %></li>
-        </ul>
+        </ul>     
+      </div>     
     <% else %>
-      <li><%= link_to "Log in", login_path %></li>
+      <span><%= link_to "Log in", login_path %></span>
     <% end %>
   </div>
 </div>

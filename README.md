@@ -7,4 +7,6 @@
 [✓] connect to heroku
 https://coffee-time1.herokuapp.com/
 
+[✓] login 
+[✓] logout
 
