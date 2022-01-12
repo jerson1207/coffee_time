@@ -1,0 +1,14 @@
+<section id="menu" class="menu">
+  <h1 class="menu-header">Menu</h1>
+
+  <div class="menu-content">
+    <% @menu.each do |menu| %>
+    <div class="menu-card">
+      <h1><%= link_to menu.title, menu %></h1>
+      <h3><%= menu.description %></h3>
+      <h2><%= menu.price %><span> PHP</span> </h2>
+      <button>Add to cart</button>
+    </div>
+  <% end %>
+  </div>
+</section>

@@ -1,5 +1,6 @@
 [✓] CRUD Menu
 [✓] Static Page
-    [] Home
-    [] Menu
+    [✓] Home
+    [✓] Menu
+-applies CSS
 
