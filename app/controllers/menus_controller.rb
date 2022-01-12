@@ -1,15 +1,24 @@
 class MenusController < ApplicationController
   before_action :set_menu, only:[:destroy, :show, :edit, :update]
 
+
   def index
-    @menus = Menu.all
+    if current_user.admin?
+      @menus = Menu.all
+    else
+      redirect_to root_path
+    end
   end
 
   def show
   end
 
   def new
-    @menu = Menu.new
+    if current_user.admin?
+      @menu = Menu.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -43,6 +52,10 @@ class MenusController < ApplicationController
     end
 
     def set_menu
-      @menu = Menu.find(params[:id])
+      if current_user.admin?
+        @menu = Menu.find(params[:id])
+      else
+        redirect_to root_path
+      end
     end
 end

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :menus
   get 'sessions/new'
   resources :users
   root 'static_page#home'
-  resources :menus
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
