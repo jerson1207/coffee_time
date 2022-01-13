@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :menus do
+    resources :orders, only: [:create, :new]
+  end
 
-  resources :menus
   get 'sessions/new'
   resources :users, except: [:show, :edit]
   root 'static_page#home'

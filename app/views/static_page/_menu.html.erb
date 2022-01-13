@@ -7,7 +7,7 @@
       <h1><%= link_to menu.title, menu %></h1>
       <h3><%= menu.description %></h3>
       <h2><%= menu.price %><span> PHP</span> </h2>
-      <button>Add to cart</button>
+      <%= link_to "Order", new_menu_order_path(menu) %>
     </div>
   <% end %>
   </div>
