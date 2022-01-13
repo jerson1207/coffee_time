@@ -1,0 +1,57 @@
+
+  <section id="cart" class="cart">
+  <div class="order">
+      <h1>Your Orders</h1>
+    <% @cart.each do |cart| %>
+      <div class="card">
+        <h3>Title: <%= title(cart.menu_id) %></h3>
+        <h3>Price: <%= price(cart.menu_id) %></h3>
+        <h3>Quantity: <%= cart.quantity %></h3>
+        <h1>Total: <%= total(cart.menu_id, cart.quantity)%> </h1>
+        <h2>*****We will prepare your coffe shortly****</h2>
+        <%= link_to "cancel", cancel_menu_order_path(cart.menu_id, cart.id) %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+    <div class="purchase">
+      <h1>Your Purchase</h1>
+      <div class="preparing">
+        <p>Preparing Your Coffee</p>
+        <% @preparing.each do |preparing| %>
+          <div class="card">
+            <h3>Title: <%= title(preparing.menu_id) %></h3>
+            <h3>Price: <%= price(preparing.menu_id) %></h3>
+            <h3>Quantity: <%= preparing.quantity %></h3>
+            <h1>Total: <%= total(preparing.menu_id, preparing.quantity)%> </h1>
+          </div>
+        <% end %>
+      </div>
+      <div class="shipping">
+        <p>Shipping</p>
+        <% @shipping.each do |shipping| %>
+          <div class="card">
+            <h3>Title: <%= title(shipping.menu_id) %></h3>
+            <h3>Price: <%= price(shipping.menu_id) %></h3>
+            <h3>Quantity: <%= shipping.quantity %></h3>
+            <h1>Total: <%= total(shipping.menu_id, shipping.quantity)%> </h1>
+          </div>
+        <% end %>      
+        </div>
+      <div class="complete">
+        <p>Complete</p>
+        <% @complete.each do |complete| %>
+          <div class="card">
+            <h3>Title: <%= title(complete.menu_id) %></h3>
+            <h3>Price: <%= price(complete.menu_id) %></h3>
+            <h3>Quantity: <%= complete.quantity %></h3>
+            <h1>Total: <%= total(complete.menu_id, complete.quantity)%> </h1>
+          </div>
+        <% end %>      
+        
+        </div> 
+    </div>
+  </section>  
+

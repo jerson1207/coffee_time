@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
   resources :menus do
-    resources :orders, only: [:create, :new]
+    resources :orders, only: [:create, :new] do
+      member do
+        get '/cancel', to: 'orders#cancel'
+        get '/preparing', to: 'orders#preparing'
+        get '/shipping', to: 'orders#shipping'
+        get '/complete', to: 'orders#complete'
+      end
+    end
   end
+  resources :users, except: [:show, :edit]
+
+  get 'dashboard', to: 'dashboard#index'
 
   get 'sessions/new'
-  resources :users, except: [:show, :edit]
   root 'static_page#home'
   get '/signup', to: 'users#new'
   get '/profile/:id', to: 'users#show', as: "profile"

@@ -1,4 +1,35 @@
 class OrdersController < ApplicationController
+  def index
+    @orders = Order.where(status: "uncart")
+  end
+
+  def cancel
+    @order = Order.find(params[:id])
+    @order.status = "uncart"
+    @order.save
+    redirect_to root_path
+  end
+
+  def preparing
+    @order = Order.find(params[:id])
+    @order.status = "preparing"
+    @order.save
+    redirect_to dashboard_path
+  end
+
+  def shipping
+    @order = Order.find(params[:id])
+    @order.status = "shipping"
+    @order.save
+    redirect_to dashboard_path
+  end
+
+  def complete
+    @order = Order.find(params[:id])
+    @order.status = "complete"
+    @order.save
+    redirect_to dashboard_path
+  end
 
   def new
     @menu = Menu.find(params[:menu_id])

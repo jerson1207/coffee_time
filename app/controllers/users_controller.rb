@@ -41,7 +41,9 @@ class UsersController < ApplicationController
 
   private
     def set_user
-      @user = User.find(params[:id])
+      if current_user.admin?
+        @user = User.find(params[:id])
+      end
     end
 
     def user_params

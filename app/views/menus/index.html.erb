@@ -1,15 +1,37 @@
-<h1>Menu</h1>
-<ul>
-  <% @menus.each do |menu| %>
-    <h1><%= link_to menu.title, menu %></h1>
-    <h3><%= menu.description %></h3>
-    <h2><%= menu.price %><span> PHP</span> </h2>
-    <li><%= link_to "Edit", edit_menu_path(menu) %></li>
-    <li><%= link_to "Destroy", menu_path(menu), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-  <% end %>
-</ul>
+<section id="menu" class="menu">
+  <div class="sidebar">
+    <div class="create">
+      <%= link_to "New menu", new_menu_path %>
+    </div>
+    <div class="total">
+      <h1>total</h1>
+      <h1>0</h1>
+    </div>
+    <div class="available">
+      <h1>available</h1>
+    </div>
 
-<%= link_to "New menu", new_menu_path %>
+    <div class="sold_out">
+      <h1>sold out</h1>
+      <h1>2</h1>
+    </div>
+  </div>
+  <div class="all-menu">
+    <h1>Menu</h1>
+    <% @menus.each do |menu| %>
+      <div class="card">
+        <h1><%= link_to menu.title, menu %></h1>
+        <h3><%= menu.description %></h3>
+        <h2><%= menu.price %><span> PHP</span> </h2>
+        <li><%= link_to "Edit", edit_menu_path(menu) %></li>
+        <li><%= link_to "Destroy", menu_path(menu), data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                      } %></li>
+      </div>
+    <% end %>
+  </div>
+
+
+
+</section>

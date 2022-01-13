@@ -24,7 +24,7 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      redirect_to @menu
+      redirect_to menus_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class MenusController < ApplicationController
 
   def update
     if @menu.update(menu_params)
-      redirect_to @menu
+      redirect_to menus_path
     else
       render :edit, status: :unprocessable_entity
     end
