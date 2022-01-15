@@ -20,6 +20,7 @@
       <div class="navbar-content">
         <ul>
           <% if current_user.admin? %>
+            <li><%= link_to "Dashboard Section", dashboard_path %></li>
             <li><%= link_to "Menu Section", menus_path %></li>
             <li><%= link_to "Users", '#' %></li>
           <% end %>
