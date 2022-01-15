@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users, except: [:show, :edit]
+  resources :users
 
   get 'dashboard', to: 'dashboard#index'
 
