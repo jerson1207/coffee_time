@@ -11,7 +11,11 @@
     </tr>
     <% @incart.each do |incart| %>
     <tr>
-      <td><%= user(incart.user_id) %> </td>
+      <td>
+        <%= link_to user_path(incart.user_id) do %>
+          <%= user(incart.user_id) %> 
+        <% end %>
+      </td>
       <td><%= title(incart.menu_id) %> </td>
       <td><%= price(incart.menu_id) %> </td>
       <td><%= incart.quantity %> </td>
@@ -34,7 +38,11 @@
     </tr>
     <% @preparing.each do |preparing| %>
     <tr>
-      <td><%= user(preparing.user_id) %> </td>
+      <td>
+      <%= link_to user_path(preparing.user_id) do %>
+          <%= user(preparing.user_id) %> 
+        <% end %>
+        </td>
       <td><%= title(preparing.menu_id) %> </td>
       <td><%= price(preparing.menu_id) %> </td>
       <td><%= preparing.quantity %> </td>
@@ -57,7 +65,11 @@
     </tr>
     <% @shipping.each do |shipping| %>
     <tr>
-      <td><%= user(shipping.user_id) %> </td>
+      <td>
+        <%= link_to user_path(shipping.user_id) do %>
+          <%= user(shipping.user_id) %> 
+        <% end %>
+      </td>
       <td><%= title(shipping.menu_id) %> </td>
       <td><%= price(shipping.menu_id) %> </td>
       <td><%= shipping.quantity %> </td>
@@ -78,7 +90,11 @@
     </tr>
     <% @complete.each do |complete| %>
     <tr>
-      <td><%= user(complete.user_id) %> </td>
+      <td>
+        <%= link_to user_path(complete.user_id) do %>
+          <%= user(complete.user_id) %> 
+        <% end %>
+      </td>
       <td><%= title(complete.menu_id) %> </td>
       <td><%= price(complete.menu_id) %> </td>
       <td><%= complete.quantity %> </td>
