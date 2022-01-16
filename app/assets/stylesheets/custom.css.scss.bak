@@ -10,15 +10,7 @@
   text-transform: capitalize;
   transition: .2s linear;
 }
-:root {
-  --yellow:#f9a826;
-  --black:#130f40;
-  --white:#fff;
-  --light-gray:#666;
-  --bg-menu:#ddd8d8;
-  --border:.1rem solid rgba(0,0,0,.2);
-  --box-shadow:0 1rem 1rem rgba(0,0,0,.05);
-}
+
 
 html{
   font-size: 62.5%;

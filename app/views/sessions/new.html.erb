@@ -1,12 +1,22 @@
-<h1>Log in</h1>
-<div class="form">
-  <%= form_for(:session, url: login_path) do |f| %>
+<div class="sign_in">
 
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>    
-    <%= f.label :password %>
-    <%= f.password_field :password, class: 'form-control' %>
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-  <% end %>
-  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <h1 class="title">Log in</h1>
+  <div class="form">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>    
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <div class="action">
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    
+    <div class="other_link">
+      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    </div>
+  </div>
 </div>
+
+

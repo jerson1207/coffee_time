@@ -1,3 +1,4 @@
+<div class="form">
 <%= form_with(model: @user) do |form| %>
   <%= render 'shared/error_messages' %>
 
@@ -21,7 +22,11 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="action">
+    <%= form.submit do %>
+      <button class="button">Sign Up</button>
+    <% end %>
   </div>
 <% end %>
+
+</div>

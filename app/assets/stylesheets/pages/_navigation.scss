@@ -1,0 +1,48 @@
+.header {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  .logo {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .navbar {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+  }
+
+
+
+}
+
+.logo a:active {
+  color: var(--yellow);
+}
+
+.logo a:hover {
+  color: var(--yellow);
+}
+
+.logo a:visited {
+  color: var(--yellow);
+}
+.logo a:link {
+  color: var(--yellow);
+}
+
+
+.navbar a:visited {
+  color: var(--blue);
+}
+
+.navbar a:link {
+  color: var(--blue);
+}
+
+.navbar a:hover {
+  color: var(--yellow);
+}

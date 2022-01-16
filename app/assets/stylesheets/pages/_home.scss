@@ -1,0 +1,26 @@
+.home {
+  .left-side {
+    .primary {
+      margin: 1rem 0;
+      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+    }
+    .sub {
+      font-size: 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 100  ;
+      margin: .5rem 0;
+      width: 90%;
+      text-align: justify;
+      span {
+        color: var(--blue);
+      }
+    }
+    .singup {
+      margin: 1rem 0;
+    }
+  }
+
+
+}

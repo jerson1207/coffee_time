@@ -1,8 +1,10 @@
-<h1>New order</h1>
+<div class="new_order">
+<h1 class="title">New order</h1>
 
+<div class="form">
 <%= form_with(model: [@menu, @order]) do |form| %>
-  <h1><%= @menu.title %> </h1>
-  <h1><%= @menu.price %> </h1>
+  <h1 class="label">Product: <%= @menu.title %> </h1>
+  <h1 class="label" >Price: <%= @menu.price %> </h1>
 
   <div>
     <%= form.label :quantity, style: "display: block" %>
@@ -23,3 +25,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+
+</div>

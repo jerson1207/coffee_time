@@ -1,0 +1,12 @@
+.home {
+  display: flex;
+  height: calc(100vh - 2rem);
+  .left-side {
+    width: 60%;
+    margin: auto;
+  }
+  .right-side {
+    width: 40%;
+    margin: auto;
+  }
+}

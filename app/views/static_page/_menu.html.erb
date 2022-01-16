@@ -3,12 +3,17 @@
 
   <div class="menu-content">
     <% @menu.each do |menu| %>
-    <div class="menu-card">
-      <h1><%= link_to menu.title, menu %></h1>
-      <h3><%= menu.description %></h3>
-      <h2><%= menu.price %><span> PHP</span> </h2>
-      <%= link_to "Order", new_menu_order_path(menu) %>
-    </div>
-  <% end %>
+      <div class="menu-card">
+        <h1 class="title"><%= menu.title %></h1>
+        <h3 class="description"><%= menu.description %></h3>
+        <h2 class="price"><%= menu.price %><span> PHP</span> </h2>
+        <div class="card-btn">
+          <%= link_to  new_menu_order_path(menu) do %>
+            <button class="button buy_now">Buy</button>
+          <% end %>
+        
+        </div>
+      </div>
+    <% end %>
   </div>
 </section>
