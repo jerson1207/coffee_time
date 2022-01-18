@@ -1,0 +1,17 @@
+
+.admin_user-index {
+  display: flex;
+  .left {
+    width: 10%;
+    margin: 2rem;
+    margin-top: 0;
+    .all-user {
+      .all-user-count {
+        margin: auto;
+      }
+    }
+  }
+  .right {
+    width: 90%;
+  }
+}

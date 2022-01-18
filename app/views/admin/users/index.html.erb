@@ -1,0 +1,26 @@
+<div class="section admin_user-index">
+  <div class="left">
+    <div class="all-user">
+      <h1 class="center title">Total USER</h1>
+      <h1 class="center all-user-count"><%= @all_user_count %></h1>
+    </div>
+  </div>
+  <div class="right">
+  <h1 class="center title">USER</h1>
+  <table class="table">
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Email</td>
+    </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+  </table>
+  </div>
+</div>
+

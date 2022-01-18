@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    resources :users, only: [:index]
+    root 'admin/users#index'
+  end
+
+  resources :users, except: [:index]
   resources :menus do
     resources :orders, only: [:create, :new] do
       member do
@@ -9,7 +16,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resources :users
+
 
   get 'dashboard', to: 'dashboard#index'
 
