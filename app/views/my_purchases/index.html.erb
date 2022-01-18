@@ -2,7 +2,7 @@
 <div class="section">
   <div class="my_ purchase">
     <h1 class="title">Order</h1>
-    <h1 class="title"><%= nothing_to_display_cart %> </h1>
+    <h1 class="display"><%= nothing_to_display_cart %> </h1>
     <div class="order">
       <% @cart.each do |cart| %>
         <div class="card">          
@@ -22,7 +22,7 @@
 
   <div class="my_ purchase">
     <h1 class="title">Preparing</h1>
-    <h1 class="title"><%= nothing_to_display_preparing %> </h1>
+    <h1 class="display"><%= nothing_to_display_preparing %> </h1>
     <div class="preparing">
       <% @preparing.each do |preparing| %>
         <div class="card">
@@ -40,7 +40,7 @@
     
     <div class="my_ purchase">
       <h1 class="title">Shipping</h1>
-      <h1 class="title"><%= nothing_to_display_shipping %> </h1>
+      <h1 class="display"><%= nothing_to_display_shipping %> </h1>
       <div class="shipping">
         <% @shipping.each do |shipping| %>
           <div class="card">
@@ -56,7 +56,7 @@
 
   <div class="my_ purchase">
     <h1 class="title">complete</h1>
-    <h1 class="title"><%= nothing_to_display_complete %> </h1>
+    <h1 class="display"><%= nothing_to_display_complete %> </h1>
     <div class="complete">
       <% @complete.each do |complete| %>
         <div class="card">

@@ -3,6 +3,13 @@
     font-size: 3rem;
     text-align: center;
   }
+  .display {
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: var(--blue);
+    text-align: center;
+  }
   .order, .preparing, .shipping, .complete {
     width: 100%;
     display: flex;
@@ -26,6 +33,7 @@
         font-size: 2rem;
         text-transform: capitalize;
       }
+
       .card-price, .card-total, .card-quantity, .cancel {
         font-size: 1.5rem;
         text-transform: capitalize;
