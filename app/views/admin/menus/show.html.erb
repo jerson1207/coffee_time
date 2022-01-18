@@ -1,5 +1,8 @@
-<h1><%= @menu.title %> </h1>
-<h2><%= @menu.description %> </h2>
-<h2><%= @menu.price %> </h2>
+<div class="section">
+<%= link_to "back", admin_menus_path %>
+<h1>title:<%= @menu.title %> </h1>
+<h2>Description<%= @menu.description %> </h2>
+<h2>Price<%= @menu.price %> PHP</h2>
+<h2>Total Order: </h2>
 
-<%= link_to "back", menus_path %>
+</div>

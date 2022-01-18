@@ -13,6 +13,15 @@
       .title {
         text-transform: uppercase;
       }
+      .title a:link {
+        color: #000;
+      }
+      .card-title a:visited {
+        color: #000;
+      }
+       a:visited {
+        color: red;
+      }
       .number {
         font-size: 5rem;
       }
@@ -36,8 +45,19 @@
         .title {
           text-align: center;
           margin-top: 1rem;
+          color: var(--blue);
+          a:hover {
+            color: var(--blue);
+          }
+          a:link {
+            color: var(--blue);
+          }
+          a:visited {
+            color: var(--blue);
+          }
           
         }
+
   
         .description {
           text-align: center;

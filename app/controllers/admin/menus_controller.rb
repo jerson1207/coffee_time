@@ -10,28 +10,20 @@ class Admin::MenusController < ApplicationController
 
 
   def index
-    if current_user.admin?
-      @menus = Menu.all
-    else
-      redirect_to root_path
-    end
+    @menus = Menu.all
   end
 
   def show
   end
 
   def new
-    if current_user.admin?
-      @menu = Menu.new
-    else
-      redirect_to root_path
-    end
+    @menu = Menu.new
   end
 
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      redirect_to menus_path
+      redirect_to admin_menus_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,7 +34,7 @@ class Admin::MenusController < ApplicationController
 
   def update
     if @menu.update(menu_params)
-      redirect_to menus_path
+      redirect_to admin_menus_path
     else
       render :edit, status: :unprocessable_entity
     end
@@ -50,7 +42,7 @@ class Admin::MenusController < ApplicationController
 
   def destroy
     @menu.destroy
-    redirect_to menus_path, status: :see_other
+    redirect_to admin_menus_path, status: :see_other
   end
 
   private 
@@ -59,10 +51,6 @@ class Admin::MenusController < ApplicationController
     end
 
     def set_menu
-      if current_user.admin?
-        @menu = Menu.find(params[:id])
-      else
-        redirect_to root_path
-      end
+      @menu = Menu.find(params[:id])
     end
 end

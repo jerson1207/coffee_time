@@ -24,7 +24,7 @@
     <div class="content">
       <% @menus.each do |menu| %>
         <div class="card">
-          <h1 class="title"><%= menu.title %></h1>
+          <h1 class="title card-title"><%= link_to menu.title, admin_menu_path(menu) %></h1>
           <h3 class="description"><%= menu.description %></h3>
           <h2 class="price"><%= menu.price %><span> PHP</span> </h2>
           <div class="card-btn">

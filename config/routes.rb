@@ -19,16 +19,16 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :show]
   get '/profile/:id', to: 'users#show', as: "profile"
   
-    # resources :menus do
-    #   resources :orders, only: [:create, :new] do
-    #     member do
-    #       get '/cancel', to: 'orders#cancel'
-    #       get '/preparing', to: 'orders#preparing'
-    #       get '/shipping', to: 'orders#shipping'
-    #       get '/complete', to: 'orders#complete'
-    #     end
-    #   end
-    # end
+    resources :menus, only: :show do
+      resources :orders, only: [:create, :new] do
+        member do
+          get '/cancel', to: 'orders#cancel'
+          get '/preparing', to: 'orders#preparing'
+          get '/shipping', to: 'orders#shipping'
+          get '/complete', to: 'orders#complete'
+        end
+      end
+    end
 
 
   get 'dashboard', to: 'dashboard#index'
