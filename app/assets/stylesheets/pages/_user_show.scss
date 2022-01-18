@@ -1,0 +1,24 @@
+.profile {
+  display: flex;
+  .left {
+    width: 20rem;
+    height: 30rem;    
+    border: 1px solid #000;
+  }
+  .right {
+    width: 100%;
+    margin: 0 1rem;
+    padding: 2rem;
+    border: 1px solid #000;
+    .title {
+      font-size: 3rem;
+    }
+    .profile-label {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    span {
+      color: var(--blue);
+    }
+  }
+}

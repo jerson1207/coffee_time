@@ -1,12 +1,12 @@
-<div>
-  <%= render @user %>
-  <% if current_user.user? %>
-    <%= link_to "Edit", edit_path(@user) %> | <%= link_to "back", root_path %>
-  <% else %>
-    <%= link_to "Edit this user", edit_user_path(@user) %>
-  <% end %>
-  <% if current_user.admin? %>
-    <%= link_to "Back to users", users_path %>
-    <%= button_to "Destroy this user", @user, method: :delete %>
-  <% end %>
+<div class=" section profile">
+  <div class="left">
+    <div class="image">Your image here</div>
+  </div>
+  <div class="right">
+      <h1 class="center title">Profile</h1>
+      <h2 class="profile-label" >Name: <span> <%= @user.name %> </span></h2>
+      <hr size="3" noshade width="70%">
+      <h2 class="profile-label" >email: <span> <%= @user.email %></span></h2>
+      <hr size="3" noshade width="70%">
+  </div>
 </div>

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    resources :users, only: [:index]
-    root 'admin/users#index'
+    resources :users, only: [:index, :show]
+    root 'users#index'
   end
 
-  resources :users, except: [:index]
+  resources :users, except: [:index, :show]
+  get '/profile/:id', to: 'users#show', as: "profile"
+  
   resources :menus do
     resources :orders, only: [:create, :new] do
       member do
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   root 'static_page#home'
   get '/signup', to: 'users#new'
-  get '/profile/:id', to: 'users#show', as: "profile"
+
   get '/profile/:id/edit', to: 'users#edit', as: "edit"
 
   get '/login', to: 'sessions#new'

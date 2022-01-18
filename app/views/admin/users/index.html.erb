@@ -15,7 +15,10 @@
     </tr>
   <% @users.each do |user| %>
     <tr>
-      <td><%= user.id %></td>
+      <td>
+        <%= link_to admin_user_path(user) do %>
+          <%= user.id %></td>
+        <% end %>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
     </tr>
