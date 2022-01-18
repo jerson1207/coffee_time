@@ -9,10 +9,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
     <%= yield %>
+    <%= javascript_tag 'dashboard' %>
   </body>
 </html>
