@@ -20,7 +20,7 @@
       <div class="navbar-content dropdown-content">
           <% if current_user.admin? %>
             <%= link_to "Dashboard Section", dashboard_path %>
-            <%= link_to "Menu Section", menus_path %>
+            <%= link_to "Menu Section", admin_menus_path %>
             <%= link_to "Users", admin_users_path %>
           <% end %>
           <%= link_to "Profile", profile_path(current_user.id) %>

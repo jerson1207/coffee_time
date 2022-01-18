@@ -1,0 +1,47 @@
+<div class="section admin_menu">
+  <div class="left">
+      <%= link_to new_admin_menu_path do %>
+      <div class="create">
+        <h1 class="center">Create</h1>
+      </div>
+      <% end %>
+    <div class="total">
+      <h1 class="title">total</h1>
+      <h1 class="number"><%= total_menu %> </h1>
+    </div>
+    <div class="available">
+      <h1 class="title">available</h1> 
+      <h1 class="number">#</h1> 
+    </div>
+
+    <div class="soldout">
+      <h1 class="title">sold out</h1>
+      <h1 class="number">#</h1>
+    </div>
+  </div>
+  <div class="right">
+    <h1 class="center">Menu</h1>
+    <div class="content">
+      <% @menus.each do |menu| %>
+        <div class="card">
+          <h1 class="title"><%= menu.title %></h1>
+          <h3 class="description"><%= menu.description %></h3>
+          <h2 class="price"><%= menu.price %><span> PHP</span> </h2>
+          <div class="card-btn">
+            <%= link_to edit_admin_menu_path(menu) do %>
+              <button class="button">Edit</button>
+            <% end %>
+              
+            <%= link_to admin_menu_path(menu), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  do %>
+                <button class="button">Delete</button>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
+</div>
+
+
+            
+            
