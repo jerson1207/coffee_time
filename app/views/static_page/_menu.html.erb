@@ -8,10 +8,16 @@
         <h3 class="description"><%= menu.description %></h3>
         <h2 class="price"><%= menu.price %><span> PHP</span> </h2>
         <div class="card-btn">
-          <%= link_to  new_menu_order_path(menu) do %>
-            <button class="button buy_now">Buy</button>
+          <% if logged_in? %>
+            <%= link_to  new_menu_order_path(menu) do %>
+              <button class="button buy_now">Buy</button>
+            <% end %>
+          <% else %>
+            <%= link_to  login_path do %>
+              <button class="button buy_now">Buy</button>
+            <% end %>
           <% end %>
-        
+          
         </div>
       </div>
     <% end %>
