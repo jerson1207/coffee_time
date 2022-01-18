@@ -1,0 +1,38 @@
+.cart, .purchase {
+  border: 1px solid #000;
+  .title {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .order, .preparing, .shipping, .complete {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 3rem;
+    padding: 4rem;
+    .card {
+      width: 200px;
+      height: 250px;
+      position: relative;
+      text-align: center;
+      background-color: var(--yellow);
+      .cancel {
+        position: absolute;
+        bottom: 0;
+        transform: translateX(-50%);
+      }
+      .card-title {
+        margin-top: 2rem;
+        font-size: 2rem;
+        text-transform: capitalize;
+      }
+      .card-price, .card-total, .card-quantity, .cancel {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        margin-top: 1rem;
+      }
+  
+    }
+  }
+}

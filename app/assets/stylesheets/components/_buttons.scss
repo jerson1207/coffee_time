@@ -24,3 +24,16 @@
   cursor: pointer;
 }
 
+
+.cancel {
+  background-color: var(--cancel);
+  border: 1px solid var(--yellow);
+  border-radius: 0.2rem;
+  color: var(--white);
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  height: 3rem;
+  width: 100%;
+}
