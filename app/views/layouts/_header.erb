@@ -17,7 +17,7 @@
       <span class="user" ><%= current_user.name %></span>
       <div class="navbar-content dropdown-content">
           <% if current_user.admin? %>
-            <%= link_to "Dashboard Section", dashboard_path %>
+            <%= link_to "Dashboard Section", admin_dashboard_path %>
             <%= link_to "Menu Section", admin_menus_path %>
             <%= link_to "Users", admin_users_path %>
           <% end %>

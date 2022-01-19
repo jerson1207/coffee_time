@@ -1,0 +1,117 @@
+<div class="section">  
+  <div class="cart">
+    <h1>Order in Cart</h1>
+    <table class="table">
+      <tr>
+        <th>Customer</th>
+        <th>Coffee</th>
+        <th>Price</th>
+        <th>quantity</th>
+        <th>total</th>
+        <th>action</th>
+      </tr>
+      <% @incart.each do |incart| %>
+      <tr>
+        <td>
+          <%= link_to user_path(incart.user_id) do %>
+            <%= user(incart.user_id) %> 
+          <% end %>
+        </td>
+        <td><%= title(incart.menu_id) %> </td>
+        <td><%= price(incart.menu_id) %> </td>
+        <td><%= incart.quantity %> </td>
+        <td><%= total(incart.menu_id, incart.quantity)%> </td>
+        <td>
+          <%= link_to preparing_menu_order_path(incart.menu_id, incart.id) do %>
+            <button class=" dashboar-btn">Move to preparing</button>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="preparing">
+    <h1>Order Preparing</h1>
+    <table>
+      <tr>
+        <th>Customer</th>
+        <th>Coffee</th>
+        <th>Price</th>
+        <th>quantity</th>
+        <th>total</th>
+        <th>action</th>
+      </tr>
+      <% @preparing.each do |preparing| %>
+      <tr>
+        <td>
+        <%= link_to user_path(preparing.user_id) do %>
+            <%= user(preparing.user_id) %> 
+          <% end %>
+          </td>
+        <td><%= title(preparing.menu_id) %> </td>
+        <td><%= price(preparing.menu_id) %> </td>
+        <td><%= preparing.quantity %> </td>
+        <td><%= total(preparing.menu_id, preparing.quantity)%> </td>
+        <td><%= link_to "move to shippment", shipping_menu_order_path(preparing.menu_id, preparing.id) %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="shipping">
+    <h1>Shipping</h1>
+    <table>
+      <tr>
+        <th>Customer</th>
+        <th>Coffee</th>
+        <th>Price</th>
+        <th>quantity</th>
+        <th>total</th>
+        <th>action</th>
+      </tr>
+      <% @shipping.each do |shipping| %>
+      <tr>
+        <td>
+          <%= link_to user_path(shipping.user_id) do %>
+            <%= user(shipping.user_id) %> 
+          <% end %>
+        </td>
+        <td><%= title(shipping.menu_id) %> </td>
+        <td><%= price(shipping.menu_id) %> </td>
+        <td><%= shipping.quantity %> </td>
+        <td><%= total(shipping.menu_id, shipping.quantity)%> </td>
+        <td><%= link_to "Move to complete", complete_menu_order_path(shipping.menu_id, shipping.id) %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="complete">
+    <h1>complete</h1>
+    <table>
+      <tr>
+        <th>Customer</th>
+        <th>Coffee</th>
+        <th>Price</th>
+        <th>quantity</th>
+        <th>total</th>
+      </tr>
+      <% @complete.each do |complete| %>
+      <tr>
+        <td>
+          <%= link_to user_path(complete.user_id) do %>
+            <%= user(complete.user_id) %> 
+          <% end %>
+        </td>
+        <td><%= title(complete.menu_id) %> </td>
+        <td><%= price(complete.menu_id) %> </td>
+        <td><%= complete.quantity %> </td>
+        <td><%= total(complete.menu_id, complete.quantity)%> </td>
+      </tr>
+      <% end %>
+    </table>
+  
+  </div>
+
+</div>

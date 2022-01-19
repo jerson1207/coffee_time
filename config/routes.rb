@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :show]
     root 'users#index'
-
+    get 'dashboard', to: 'dashboard#index'
     resources :menus do
       resources :orders, only: [:create, :new] do
         member do
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     end
 
 
-  get 'dashboard', to: 'dashboard#index'
+  
 
   get 'sessions/new'
   root 'static_page#home'

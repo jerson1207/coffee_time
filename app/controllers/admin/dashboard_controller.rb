@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class Admin::DashboardController < ApplicationController
   def index
     @incart = Order.where(status: "in_cart")
     @preparing = Order.where(status: "preparing")
