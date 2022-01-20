@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   namespace :admin do
-    resources :users, only: [:index, :show]
     root 'users#index'
+    resources :users, only: [:index, :show]
     get 'dashboard', to: 'dashboard#index'
     resources :menus do
       resources :orders, only: [:create, :new] do
@@ -30,11 +29,14 @@ Rails.application.routes.draw do
       end
     end
 
-
+    
+      # root 'admin/dashboard#index'
+ 
+      root 'static_page#home'
+  
   
 
   get 'sessions/new'
-  root 'static_page#home'
   get '/signup', to: 'users#new'
 
   get '/profile/:id/edit', to: 'users#edit', as: "edit"
