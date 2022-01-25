@@ -1,9 +1,19 @@
 <div class=" section profile">
   <div class="left">
-    <div class="image">Your image here</div>
+    <div class="image">
+        
+    </div>
   </div>
   <div class="right">
       <h1 class="center title">Profile</h1>
+      <div class="avatar">
+        <% if @user.avatar.attached? %>
+          <%= image_tag(@user.avatar) %>
+        <% else %>
+          <%= image_tag "No_profile.jpg"%>
+        <% end %>
+      </div>
+      
       <h2 class="profile-label" >Name: <span> <%= @user.name %> </span></h2>
       <hr size="3" noshade width="70%">
       <h2 class="profile-label" >email: <span> <%= @user.email %></span></h2>

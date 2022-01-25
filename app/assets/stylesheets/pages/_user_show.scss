@@ -4,12 +4,26 @@
     width: 20rem;
     height: 30rem;    
     border: 1px solid #000;
+    img {
+      // width: 20rem;
+      // height: 30rem;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      padding: 5px;
+      width: 150px;
+    }
   }
   .right {
     width: 100%;
     margin: 0 1rem;
     padding: 2rem;
     border: 1px solid #000;
+    .avatar img {
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      padding: 5px;
+      width: 150px;
+    }
     .title {
       font-size: 3rem;
     }

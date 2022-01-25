@@ -3,6 +3,11 @@
   <%= render 'shared/error_messages' %>
 
   <div>
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
