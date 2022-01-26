@@ -16,6 +16,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
+    @admin = User.where(role: "admin")
   end
 
   private
