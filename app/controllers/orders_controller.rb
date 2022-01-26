@@ -14,21 +14,21 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.status = "preparing"
     @order.save
-    redirect_to dashboard_path
+    redirect_to admin_dashboard_path
   end
 
   def shipping
     @order = Order.find(params[:id])
     @order.status = "shipping"
     @order.save
-    redirect_to dashboard_path
+    redirect_to admin_dashboard_path
   end
 
   def complete
     @order = Order.find(params[:id])
     @order.status = "complete"
     @order.save
-    redirect_to dashboard_path
+    redirect_to admin_dashboard_path
   end
 
   def new

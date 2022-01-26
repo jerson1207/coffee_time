@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root 'users#index'
-    resources :users, only: [:index, :show]
+
     get 'dashboard', to: 'dashboard#index'
+    resources :users, only: [:index, :show]
     resources :menus do
       resources :orders, only: [:create, :new] do
         member do

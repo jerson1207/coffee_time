@@ -1,0 +1,30 @@
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+  border: 1px #000 solid;
+  border-bottom: #777;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  border: #000 1px solid;
+  height: 87vh;
+}
+
+#pending_order, #preparing_order, #shipping_order, #complete_order {background-color: #777;}
