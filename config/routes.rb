@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'static_page#home'
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
-    resources :users, only: [:indexwwwww]
+    resources :users, only: [:index, :show]
     get '/profile/:id', to: 'users#show', as: "profile"
     resources :menus do
       resources :orders, only: [:create, :new] do
