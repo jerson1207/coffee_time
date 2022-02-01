@@ -14,6 +14,7 @@ Rails.application.routes.draw do
         end
       end
     end
+    get 'contact_us', to: 'contact_us#index'
   end
 
   resources :users, except: [:index, :show, :edit]
