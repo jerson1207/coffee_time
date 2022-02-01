@@ -19,7 +19,7 @@
         <% @incart.each do |incart| %>
         <tr>
           <td>
-            <%= link_to user_path(incart.user_id) do %>
+            <%= link_to admin_user_path(incart.user_id) do %>
               <%= user(incart.user_id) %> 
             <% end %>
           </td>
@@ -53,7 +53,7 @@
         <% @preparing.each do |preparing| %>
         <tr>
           <td>
-          <%= link_to user_path(preparing.user_id) do %>
+          <%= link_to admin_user_path(preparing.user_id) do %>
               <%= user(preparing.user_id) %> 
             <% end %>
             </td>
@@ -83,7 +83,7 @@
         <% @shipping.each do |shipping| %>
         <tr>
           <td>
-            <%= link_to user_path(shipping.user_id) do %>
+            <%= link_to admin_user_path(shipping.user_id) do %>
               <%= user(shipping.user_id) %> 
             <% end %>
           </td>
@@ -113,7 +113,7 @@
         <% @complete.each do |complete| %>
         <tr>
           <td>
-            <%= link_to user_path(complete.user_id) do %>
+            <%= link_to admin_user_path(complete.user_id) do %>
               <%= user(complete.user_id) %> 
             <% end %>
           </td>
