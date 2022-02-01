@@ -1,16 +1,10 @@
 .menu {
-  .menu-header {
-    text-align: center;
-  }
-
   .menu-content {
-    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
     justify-content: space-between;
     width: 100%;
     margin-top: 3rem;
-
   }
 }
