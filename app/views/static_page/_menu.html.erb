@@ -4,6 +4,13 @@
   <div class="menu-content">
     <% @menu.each do |menu| %>
       <div class="menu-card">
+        <div class="coffee_img">
+          <% if menu.image.attached? %>
+            <%= image_tag(menu.image) %>
+          <% else %>
+            <%= image_tag "coffee.svg"%>
+          <% end %>            
+        </div>
         <h1 class="title"><%= menu.title %></h1>
         <h3 class="description"><%= menu.description %></h3>
         <h2 class="price"><%= menu.price %><span> PHP</span> </h2>

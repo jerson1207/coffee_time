@@ -1,5 +1,11 @@
 <div class="form menu-form">
 <%= form_with model: [:admin, @menu] do |form| %>
+
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>

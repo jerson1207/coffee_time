@@ -4,5 +4,6 @@ class Menu < ApplicationRecord
   validates :price, presence: true
 
   has_many :orders
+  has_one_attached :image
 
 end

@@ -21,17 +21,24 @@
   </div>
   <div class="right">
     <h1 class="center">Menu</h1>
-    <div class="content">
+    <div class="menu-content content">
       <% @menus.each do |menu| %>
-        <div class="card">
+        <div class="menu-card">
+          <div class="coffee_img">
+            <% if menu.image.attached? %>
+              <%= image_tag(menu.image) %>
+            <% else %>
+              <%= image_tag "coffee.svg"%>
+            <% end %>  
+          </div>
+
           <h1 class="title card-title"><%= link_to menu.title, admin_menu_path(menu) %></h1>
           <h3 class="description"><%= menu.description %></h3>
           <h2 class="price"><%= menu.price %><span> PHP</span> </h2>
-          <div class="card-btn">
+          <div class="admin_card-btn">
             <%= link_to edit_admin_menu_path(menu) do %>
               <button class="button">Edit</button>
-            <% end %>
-              
+            <% end %>     
             <%= link_to admin_menu_path(menu), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  do %>
                 <button class="button">Delete</button>
             <% end %>
@@ -39,7 +46,7 @@
         </div>
       <% end %>
     </div>
-</div>
+  </div>
 </div>
 
 
