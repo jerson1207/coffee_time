@@ -2,72 +2,31 @@
 <div class="section">
   <div class="my_ purchase">
     <h1 class="title">Order</h1>
-    <h1 class="display"><%= nothing_to_display_cart %> </h1>
+
     <div class="order">
-      <% @cart.each do |cart| %>
+      <% @order.each do |order| %>
         <div class="card">          
-        <h3 class="card-title"><%= title(cart.menu_id) %></h3>
-        <h3 class="card-price">Price: <%= price(cart.menu_id) %></h3>
-        <h3 class="card-quantity">Quantity: <%= cart.quantity %></h3>
-        <h1 class="card-total">Total: <%= total(cart.menu_id, cart.quantity)%> </h1>
-        <h3 class="card-title">Order number: <%= cart.id %></h3>
-    
-          <%= link_to cancel_menu_order_path(cart.menu_id, cart.id) do %>
-            <button class="button cancel">Cancel</button>
+          <h3 class="card-title"><%= title(order.menu_id) %></h3>
+          <h3 class="card-price">Price: <%= price(order.menu_id) %></h3>
+          <h3 class="card-quantity">Quantity: <%= order.quantity %></h3>
+          <h1 class="card-total">Total: <%= total(order.menu_id, order.quantity)%> </h1>
+          <h3 class="card-title">Order#: <%= order.id %></h3>
+          <% if order.status == "in_cart" %>
+            <%= link_to cancel_menu_order_path(order.menu_id, order.id) do %>
+              <button class="button cancel">Cancel</button>
+            <% end %>  
+          <% elsif order.status == "preparing" %>
+            <button class="button">Your order is being prepare, Please wait</button>
+          <% elsif order.status == "shipping" %>
+            <button class="button">Your order is being ship, Please prepare exact amount</button>
+          <% elsif order.status == "complete" %>
+            <button class="button">Order complete. Thank you for your purchase</button>
           <% end %>
         </div>
       <% end %>
     </div>
   </div>
-
-  <div class="my_ purchase">
-    <h1 class="title">Preparing</h1>
-    <h1 class="display"><%= nothing_to_display_preparing %> </h1>
-    <div class="preparing">
-      <% @preparing.each do |preparing| %>
-        <div class="card">
-          <h3 class="card-title"><%= title(preparing.menu_id) %></h3>
-          <h3 class="card-price">Price: <%= price(preparing.menu_id) %></h3>
-          <h3 class="card-quantity">Quantity: <%= preparing.quantity %></h3>
-          <h1 class="card-total">Total: <%= total(preparing.menu_id, preparing.quantity)%> </h1>
-          <h3 class="card-title">Order number: <%= preparing.id %></h3>
-        </div>
-      <% end %>
-    </div>
-  </div>
-    
-    
-    
-    <div class="my_ purchase">
-      <h1 class="title">Shipping</h1>
-      <h1 class="display"><%= nothing_to_display_shipping %> </h1>
-      <div class="shipping">
-        <% @shipping.each do |shipping| %>
-          <div class="card">
-            <h3 class="title"><%= title(shipping.menu_id) %></h3>
-            <h3 class="price">Price: <%= price(shipping.menu_id) %></h3>
-            <h3 class="quantity">Quantity: <%= shipping.quantity %></h3>
-            <h1 class="total ">Total: <%= total(shipping.menu_id, shipping.quantity)%> </h1>
-            <h3 class="card-title">Order number: <%= shipping.id %></h3>
-          </div>
-        <% end %>      
-    </div>
-  </div>
-
-  <div class="my_ purchase">
-    <h1 class="title">complete</h1>
-    <h1 class="display"><%= nothing_to_display_complete %> </h1>
-    <div class="complete">
-      <% @complete.each do |complete| %>
-        <div class="card">
-          <h3 h3 class="title"><%= title(complete.menu_id) %></h3>
-          <h3 h3 class="price">Price: <%= price(complete.menu_id) %></h3>
-          <h3 h3 class="quantity">Quantity: <%= complete.quantity %></h3>
-          <h1 h1 class="total ">Total: <%= total(complete.menu_id, complete.quantity)%> </h1>
-           <h3 class="card-title">Order number: <%= complete.id %></h3>
-        </div>
-      <% end %>  
-    </div>    
+   
   </div>    
 
 </div>

@@ -8,9 +8,10 @@ class MyPurchasesController < ApplicationController
   end
   
   def index
-    @cart = Order.where(status: "in_cart", user_id: current_user.id )
-    @preparing = Order.where(status: "preparing", user_id: current_user.id)
-    @shipping = Order.where(status: "shipping", user_id: current_user.id)
-    @complete = Order.where(status: "complete", user_id: current_user.id)
+    # @cart = Order.where(status: "in_cart", user_id: current_user.id )
+    # @preparing = Order.where(status: "preparing", user_id: current_user.id)
+    # @shipping = Order.where(status: "shipping", user_id: current_user.id)
+    # @complete = Order.where(status: "complete", user_id: current_user.id)
+    @order = Order.where.not(status: "uncart")
   end
 end
