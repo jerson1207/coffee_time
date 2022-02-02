@@ -4,4 +4,8 @@ class StaticPageController < ApplicationController
     @menu = Menu.all
   end
 
+  def about_us
+    
+  end
+
 end

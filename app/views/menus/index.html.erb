@@ -1,37 +1,32 @@
 <section id="menu" class="menu">
-  <div class="sidebar">
-    <div class="create">
-      <%= link_to "New menu", new_menu_path %>
-    </div>
-    <div class="total">
-      <h1>total</h1>
-      <h1>0</h1>
-    </div>
-    <div class="available">
-      <h1>available</h1>
-    </div>
+  <h1 class="section-header">Menu</h1>
 
-    <div class="sold_out">
-      <h1>sold out</h1>
-      <h1>2</h1>
-    </div>
-  </div>
-  <div class="all-menu">
-    <h1>Menu</h1>
+  <div class="menu-content">
     <% @menus.each do |menu| %>
-      <div class="card">
-        <h1><%= link_to menu.title, menu %></h1>
-        <h3><%= menu.description %></h3>
-        <h2><%= menu.price %><span> PHP</span> </h2>
-        <li><%= link_to "Edit", edit_menu_path(menu) %></li>
-        <li><%= link_to "Destroy", menu_path(menu), data: {
-                        turbo_method: :delete,
-                        turbo_confirm: "Are you sure?"
-                      } %></li>
+      <div class="menu-card">
+        <div class="coffee_img">
+          <% if menu.image.attached? %>
+            <%= image_tag(menu.image) %>
+          <% else %>
+            <%= image_tag "coffee.svg"%>
+          <% end %>            
+        </div>
+        <h1 class="title"><%= menu.title %></h1>
+        <h3 class="description"><%= menu.description %></h3>
+        <h2 class="price"><%= menu.price %><span> PHP</span> </h2>
+        <div class="card-btn">
+          <% if logged_in? %>
+            <%= link_to  new_menu_order_path(menu) do %>
+              <button class="button buy_now">Buy</button>
+            <% end %>
+          <% else %>
+            <%= link_to  login_path do %>
+              <button class="button buy_now">Buy</button>
+            <% end %>
+          <% end %>
+          
+        </div>
       </div>
     <% end %>
   </div>
-
-
-
 </section>

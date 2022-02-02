@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       log_in user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to root_path
+      if user.admin?
+        redirect_to admin_dashboard_path
+      else
+        redirect_to root_path
+      end
     else
       flash[:danger] = 'Invalid email/password combination' # Not quite right!
       render 'new'

@@ -1,5 +1,12 @@
-<%= render "static_page/home"  %>
-<%= render "static_page/menu"  %>
-<%= render "static_page/about"  %>
-<%= render "static_page/contact_us"  %>
-
+<section id="home" class="home">
+  <div class="left-side">
+    <h1 class="primary">There are endless combinations of coffee that could be drank</h1>
+    <h3 class="sub">You know how to make a simple cup of coffee, but what about a Vietnamese Cha Phe Sua Da? And do you know the difference between a macchiato and a cappuccino? <span>It’s always up to us to find the right one.</span> </h3>
+    <%= link_to signup_path do %>
+      <button class="button singup">Sign up</button>
+    <% end %>
+  </div>
+  <div class="right-side">
+    <%= image_tag "hero.svg", style: 'height:80%;width:80%;' %>
+  </div>
+</section>
