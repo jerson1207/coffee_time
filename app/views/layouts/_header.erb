@@ -5,7 +5,7 @@
       <%= link_to 'Home', "#home" %>
       <%= link_to 'Menu', "#menu" %>
       <%= link_to 'About', "#about" %>
-      <%= link_to 'Contact us', "#contact-us" %>
+      <%= link_to 'Contact us', contact_us_path %>
     <% elsif logged_in? && current_user.admin? %>
       <%# link_to "Default", root_path %>
       <%# link_to "Menu", menus_path %>
@@ -13,7 +13,7 @@
       <%= link_to 'Home', "#home" %>
       <%= link_to 'Menu', "#menu" %>
       <%= link_to 'About', "#about" %>
-      <%= link_to 'Contact us', "#contact-us" %>
+      <%= link_to 'Contact us', contact_us_path %>
     <% end %>
   </nav>
   <div class="user-navbar dropdown">
@@ -25,6 +25,7 @@
             <%= link_to "Menu Section", admin_menus_path %>
             <%= link_to "Users", admin_users_path %>
             <%= link_to "Profile", admin_profile_path(current_user.id) %>
+            <%= link_to 'Contact us', contact_us_path %>
           <% elsif current_user.user? %>
             <%= link_to "Profile", profile_path(current_user.id) %>
             <%= link_to "My Purchase", my_purchases_path %>

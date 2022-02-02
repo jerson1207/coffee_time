@@ -1,0 +1,44 @@
+<section class="contact-us " >
+  <div class="section-header section-contact" id="contact-us">Contact Us</div>
+  <div class="contact-wrapper">
+    <div class="contact-details">
+      <div class="phone">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Phone</h3>
+        <p>+123 456 789</p>
+        <p>+987 654 321</p>
+      </div>
+      <div class="address">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Address</h3>
+        <p>30 Edsa, corner Pioneer St, </p>
+        <p>Mandaluyong, Metro Manila</p>
+      </div>
+      <div class="email">
+        <i class="far fa-envelope"></i>
+        <h3>Email</h3>
+        <p>noemail@test.com</p>
+        <p>test@test.com</p>
+      </div>
+    </div>
+    <h1>Get In Touch</h1>
+    <%= form_with(model: @contact_u) do |form| %>
+      <div class="contact-form">
+        <%= form.text_field :name, placeholder:"Your Name" %>
+      </div>
+
+      <div class="contact-form">
+        <%= form.text_field :email, placeholder:"Your Email"  %>
+      </div>
+
+      <div class="contact-form">
+        <%= form.text_area :message, placeholder:"Your Message"  %>
+      </div>
+
+      <div class="contact-form">
+        <%= form.submit "Submit" %>
+      </div>
+    <% end %>
+
+  </div>
+</section>
