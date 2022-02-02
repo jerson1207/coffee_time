@@ -1,17 +1,30 @@
 .menu-card {
-  border: var(--yellow) 2px solid;
+  border: var(--yellow) 1px solid;
   height: 40rem;
   width: 25rem;
   padding: 1rem;
+  background-color: var(--white);
   .coffee_img {
-    // border: 1px var(--yellow) solid;
+    height: 50%;
+    width: 100%;
     
     img {
       width: 100%;
+      background-color: var(--white);
       height: 100%;
       z-index: -100;
     }
   }
+  .h50 {
+    height: 50%;
+  }
+  .h30 {
+    height: 30%;
+  }
+  .h20 {
+    height: 20%;
+  }
+
   .title {
     font-size: 2rem;
     text-transform: capitalize;
@@ -46,12 +59,12 @@
     font-weight: 100;
     font-style: normal;
     text-align: center;
-    margin-top: 1rem;
+    // margin-top: 1rem;
   }
   .card-btn {
     margin: auto;
     width: 50%;
-    margin-top: 2rem;
+    // margin-top: 2rem;
   }
 }
 
