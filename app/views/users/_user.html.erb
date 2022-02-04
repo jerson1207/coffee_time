@@ -22,5 +22,17 @@
         <hr size="3" noshade width="70%">
         <h2 class="profile-label" >Contact: <span> <%= @user.contact %></span></h2>
         <hr size="3" noshade width="70%">
+        <h2 class="profile-label" >Adress: <span>
+          <table >
+          <% @user.addresses.each do |a| %>
+            <tr>
+              <td><%= a.street1 %> <%= a.street2 %>, <%= a.city %> <%= a.province %> <%= a.zip %></td>
+              <td><%= link_to "edit", edit_address_path(@user, a) %></td>
+              <td><%= link_to "delete", delete_address_path(@user,a), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %></td>
+            </tr>
+            <% end %>
+          </table>
+        </span></h2>
+        <h2><%= link_to "New Address", new_address_path %></h2>
     </div>
   </div>

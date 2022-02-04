@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+  
   root 'static_page#home'
   get 'sessions/new'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-  resources :users, except: [:index, :show, :edit]
+  resources :users, except: [:index, :show, :edit] 
   get '/profile/:id', to: 'users#show', as: "profile"
+  get '/profile/:id/addresses/new', to: 'addresses#new', as: "new_address"
+  get '/profile/:user_id/addresses/:id/edit', to: 'addresses#edit', as: "edit_address"
+  put '/profile/:user_id/addresses/:id/', to: 'addresses#update', as: "update_address"
+  delete '/profile/:user_id/addresses/:id/', to: 'addresses#destroy', as: "delete_address"
+  resources :addresses, except: [:show, :index]
+
   get '/profile/:id/edit', to: 'users#edit', as: "edit"
   get '/menus', to: 'menus#index'
   get '/about_us', to: 'static_page#about_us'

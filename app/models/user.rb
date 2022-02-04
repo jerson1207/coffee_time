@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
+  has_many :addresses
+
   validates :contact, numericality: { only_integer: true }, length: { in: 9..11}
 
   def set_default_role
