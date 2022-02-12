@@ -1,38 +1,64 @@
 <section id="menu" class="menu">
-  <h1 class="section-header">Menu</h1>
-
-  <div class="menu-content">
-    <% @menus.each do |menu| %>
-      <div class="menu-card h100">
-        <div class="coffee_img h50">
-          <% if menu.image.attached? %>
-            <%= image_tag(menu.image) %>
-          <% else %>
-            <%= image_tag "coffee.svg"%>
-          <% end %>            
-        </div>
-      
-        <div class="h30">
-          <h1 class="title"><%= menu.title %></h1>
-          <h3 class="description"><%= menu.description %></h3>
-        </div>
-        <div class="h20">
-          <h2 class="price"><%= sprintf('%.2f', menu.price) %><span> PHP</span> </h2>
-          <div class="card-btn">
-            <% if logged_in? %>
-              <%= link_to  new_menu_order_path(menu) do %>
-                <button class="button buy_now">Buy</button>
-              <% end %>
+ 
+  <div class="container">
+    <h3 class="title">Menu</h3>         
+      <div class="products-container">
+        <% @menus.each do |menu| %>
+          <div class="product" data-name="p-<%=menu.id %>">
+            <% if menu.image.attached? %>
+              <%= image_tag(menu.image) %>
             <% else %>
-              <%= link_to  login_path do %>
-                <button class="button buy_now">Buy</button>
-              <% end %>
+              <%= image_tag "coffee.svg"%>
             <% end %>
-      </div>      
-    </div>
-  </div>
-        
+            
+            <h3><%= menu.title%> </h3>
+            
+            <div class="price"><%= menu.price%> </div>
+
+          </div>
+        <% end %>
       
+      </div>
+  </div>
+
+  <div class="products-preview">
+    <% @menus.each do |menu| %>
+      <div class="preview" data-target="p-<%=menu.id %>">
+        <i class="fas fa-times"></i>
+        <% if menu.image.attached? %>
+          <%= image_tag(menu.image) %>
+        <% else %>
+          <%= image_tag "coffee.svg"%>
+        <% end %>
+
+        <h3><%=  menu.title %></h3>
+
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+        </div>
+
+        <p><%= menu.description %></p>
+       
+        <div class="price"><%= menu.price %> </div>
+       
+        <div class="buttons">
+          <% if logged_in? %>
+            <%= link_to "Buy Now",  new_menu_order_path(menu), class: "buy"  %>
+          <% else %>
+            <%= link_to  "Buy Now", login_path, class: "Buy Now"  %>
+          <% end %>
+          <a href="#" class="cart">add to cart</a>
+        </div>
+
+      </div>
     <% end %>
   </div>
+
 </section>
+<%= javascript_include_tag 'preview'%>
+
