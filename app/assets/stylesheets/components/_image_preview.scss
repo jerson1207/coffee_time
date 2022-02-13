@@ -1,0 +1,32 @@
+.image-preview {
+  margin-top: 15px;
+  width: 20rem;
+  height: 20rem;    
+
+
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #cccccc;
+
+  img {
+    width: 20rem;
+    height: 20rem;    
+
+
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 5px;
+
+  }
+}
+
+.image-preview__image {
+  display: none;
+  width: 100%;
+}

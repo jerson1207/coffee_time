@@ -3,13 +3,17 @@
   <%= render 'shared/error_messages' %>
 
   <div>
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
+    <div class="image-preview" id="imagePreview">  
+      <%= image_tag "", class: "image-preview__image" %>
+      <span class="image-preview__default-text">Image Preview</span>   
+    </div>
+    <%= form.label :avatar, "Profile" %>
+    <%= form.file_field :avatar, id:"inpFile"  %>     
   </div>
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name%>
   </div>
 
   <div>
